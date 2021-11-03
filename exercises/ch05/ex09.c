@@ -12,7 +12,7 @@ int main(void){
     status = scanf_s("%lf", &fahrenheit_temp);
     while (status == 1){
         temperatures(fahrenheit_temp);
-        printf("Enter next fahrenheit temperature value (q or non-number to quit):");
+        printf("Enter next fahrenheit temperature value (q or non-numeric to quit):");
         status = scanf_s("%lf", &fahrenheit_temp);
     }
     printf("Done\n");

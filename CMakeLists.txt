@@ -3,14 +3,6 @@ project(CPrimerPlus C)
 
 set(CMAKE_C_STANDARD 11)
 
-# 课程代码
-# 第1章
-add_executable(inform assets/codes/Ch01/inform.c)
-add_executable(listing1 assets/codes/Ch01/listing1.c)
-add_executable(listing2 assets/codes/Ch01/listing2.c)
-# 第3章
-add_executable(platinum assets/codes/Ch03/platinum.c)
-
 # 编程练习
 # 第2章
 add_executable(ex2-01 exercises/ch02/ex01.c)
@@ -70,3 +62,16 @@ add_executable(ex6-15 exercises/ch06/ex15.c)
 add_executable(ex6-16 exercises/ch06/ex16.c)
 add_executable(ex6-17 exercises/ch06/ex17.c)
 add_executable(ex6-18 exercises/ch06/ex18.c)
+
+# 第7章
+add_executable(ex7-01 exercises/ch07/ex01.c)
+add_executable(ex7-02 exercises/ch07/ex02.c)
+add_executable(ex7-03 exercises/ch07/ex03.c)
+add_executable(ex7-04 exercises/ch07/ex04.c)
+add_executable(ex7-05 exercises/ch07/ex05.c)
+add_executable(ex7-06 exercises/ch07/ex06.c)
+add_executable(ex7-07 exercises/ch07/ex07.c)
+add_executable(ex7-08 exercises/ch07/ex08.c)
+add_executable(ex7-09 exercises/ch07/ex09.c)
+add_executable(ex7-10 exercises/ch07/ex10.c)
+add_executable(ex7-11 exercises/ch07/ex11.c)
