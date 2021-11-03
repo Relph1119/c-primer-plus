@@ -6,11 +6,14 @@ void temperatures(double temp);
 
 int main(void){
     double fahrenheit_temp;
-
+    int status;
     printf("Enter a number of fahrenheit temperature:");
-    while (scanf_s("%lf", &fahrenheit_temp) == 1){
+
+    status = scanf_s("%lf", &fahrenheit_temp);
+    while (status == 1){
         temperatures(fahrenheit_temp);
         printf("Enter next fahrenheit temperature value (q or non-number to quit):");
+        status = scanf_s("%lf", &fahrenheit_temp);
     }
     printf("Done\n");
     return 0;
