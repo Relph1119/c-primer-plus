@@ -5,7 +5,7 @@
 #define SIZE 8
 
 int main(void){
-    char ch;
+    int ch;
     int count = 1;
 
     while ((ch = getchar()) != '#'){

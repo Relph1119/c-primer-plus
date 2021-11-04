@@ -4,7 +4,7 @@
 #include "stdio.h"
 
 int main(void) {
-    char ch;
+    int ch;
     int count1 = 0;
     int count2 = 0;
 

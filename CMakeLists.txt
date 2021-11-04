@@ -75,3 +75,13 @@ add_executable(ex7-08 exercises/ch07/ex08.c)
 add_executable(ex7-09 exercises/ch07/ex09.c)
 add_executable(ex7-10 exercises/ch07/ex10.c)
 add_executable(ex7-11 exercises/ch07/ex11.c)
+
+# 第8章
+add_executable(ex8-01 exercises/ch08/ex01.c)
+add_executable(ex8-02 exercises/ch08/ex02.c)
+add_executable(ex8-03 exercises/ch08/ex03.c)
+add_executable(ex8-04 exercises/ch08/ex04.c)
+add_executable(ex8-05 exercises/ch08/ex05.c)
+add_executable(ex8-06 exercises/ch08/ex06.c)
+add_executable(ex8-07 exercises/ch08/ex07.c)
+add_executable(ex8-08 exercises/ch08/ex08.c)

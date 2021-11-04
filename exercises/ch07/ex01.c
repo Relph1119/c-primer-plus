@@ -4,7 +4,7 @@
 #include "stdio.h"
 
 int main(void){
-    char ch;
+    int ch;
     int space_count = 0;
     int newlines_count = 0;
     int other = 0;

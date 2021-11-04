@@ -14,7 +14,7 @@
 #define EXTRAL 0.50
 
 int main(void) {
-    char ch;
+    int ch;
     double lb_artichokes = 0;
     double lb_beets = 0;
     double lb_carrots = 0;
@@ -39,17 +39,17 @@ int main(void) {
         switch (ch) {
             case 'a' :
                 printf("Enter pounds of artichokes: ");
-                scanf("%lf", &lb_temp);
+                scanf_s("%lf", &lb_temp);
                 lb_artichokes += lb_temp;
                 break;
             case 'b' :
                 printf("Enter pounds of beets: ");
-                scanf("%lf", &lb_temp);
+                scanf_s("%lf", &lb_temp);
                 lb_beets += lb_temp;
                 break;
             case 'c' :
                 printf("Enter pounds of carrots: ");
-                scanf("%lf", &lb_temp);
+                scanf_s("%lf", &lb_temp);
                 lb_carrots += lb_temp;
                 break;
             default :

@@ -4,8 +4,8 @@
 #include "stdio.h"
 
 int main(void) {
-    char ch;
-    char prev = ' ';
+    int ch;
+    int prev = ' ';
     int count = 0;
 
     while ((ch = getchar()) != '#') {

@@ -2,46 +2,52 @@
 // Created by HRF on 2021/11/3.
 //
 #include "stdio.h"
-#include "ctype.h"
 #define AMT1 17850
 #define AMT2 23900
 #define AMT3 29750
 #define AMT4 14875
 #define RATE1 0.15
 #define RATE2 0.28
+
 void print_menu(void);
-void calc(double base_pay, double hours);
+void calc(double amt, double salary);
 
 int main(void) {
     int pay_level;
     double salary;
+    double pay;
 
     print_menu();
-    scanf_s("%d", &pay_level);
-    if (pay_level > 0 && pay_level < 5) {
-        printf("Enter your salary:");
-        scanf_s("%lf", &salary);
+    while ((scanf_s("%d", &pay_level)) == 1 && pay_level != 5) {
+        if (pay_level == '\n')
+            continue;
+
         switch (pay_level) {
             case 1:
-                calc(AMT1, salary);
+                pay = AMT1;
                 break;
             case 2:
-                calc(AMT2, salary);
+                pay = AMT2;
                 break;
             case 3:
-                calc(AMT3, salary);
+                pay = AMT3;
+                break;
+            case 4:
+                pay = AMT4;
                 break;
             default:
-                calc(AMT4, salary);
+                printf("Please enter choice 1~5 .\n");
+                print_menu();
+                continue;
         }
+        printf("Enter your salary:");
+        scanf_s("%lf", &salary);
+        calc(pay, salary);
 
-    } else {
-        while (isdigit(pay_level) && (pay_level > 5 || pay_level <= 0)) {
-            printf("Please enter correct number (1 ~ 5).\n");
-            print_menu();
-            scanf_s("%d", &pay_level);
-        }
+        print_menu();
     }
+
+    printf("Bye.");
     return 0;
 }
 

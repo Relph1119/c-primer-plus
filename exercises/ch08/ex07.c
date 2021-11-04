@@ -1,7 +1,8 @@
 //
-// Created by HRF on 2021/11/3.
+// Created by HRF on 2021/11/4.
 //
 #include "stdio.h"
+#include "ctype.h"
 #define BASE_PAY1 8.75
 #define BASE_PAY2 9.33
 #define BASE_PAY3 10.00
@@ -13,10 +14,9 @@
 #define RATE1 0.15
 #define RATE2 0.20
 #define RATE3 0.25
-
 void print_menu(void);
-
 void calc(double base_pay, double hours);
+int get_first(void);
 
 int main(void) {
     int pay_level;
@@ -24,25 +24,27 @@ int main(void) {
     double pay;
 
     print_menu();
-    while ((scanf_s("%d", &pay_level)) == 1 && pay_level != 5) {
+    while ((pay_level = get_first()) != 'q') {
         if (pay_level == '\n')
             continue;
 
+        pay_level = tolower(pay_level);
+
         switch (pay_level) {
-            case 1:
+            case 'a':
                 pay = BASE_PAY1;
                 break;
-            case 2:
+            case 'b':
                 pay = BASE_PAY2;
                 break;
-            case 3:
+            case 'c':
                 pay = BASE_PAY3;
                 break;
-            case 4:
+            case 'd':
                 pay = BASE_PAY4;
                 break;
             default:
-                printf("Please enter choice 1~5 .\n");
+                printf("Please enter a, b, c, d, or q.\n");
                 print_menu();
                 continue;
         }
@@ -53,16 +55,15 @@ int main(void) {
         print_menu();
     }
 
-    printf("Bye.");
     return 0;
 }
 
 void print_menu(void) {
     printf("*****************************************************************\n");
     printf("Enter the number corresponding to the desired pay rate or action:\n");
-    printf("1) $%.2f/hr                            2) $%.2f/hr\n", BASE_PAY1, BASE_PAY2);
-    printf("3) $%.2f/hr                           4) $%.2f/hr\n", BASE_PAY3, BASE_PAY4);
-    printf("5) quit\n");
+    printf("a) $%.2f/hr                            b) $%.2f/hr\n", BASE_PAY1, BASE_PAY2);
+    printf("c) $%.2f/hr                           d) $%.2f/hr\n", BASE_PAY3, BASE_PAY4);
+    printf("q) quit\n");
     printf("*****************************************************************\n");
 }
 
@@ -85,4 +86,16 @@ void calc(double base_pay, double hours) {
     net = gross - taxes;
 
     printf("gross: $%.2f; taxes: $%.2f; net: $%.2f\n", gross, taxes, net);
+}
+
+int get_first(void) {
+    int ch;
+
+    ch = getchar();
+    while (isspace(ch))
+        ch = getchar();
+    while (getchar() != '\n')
+        continue;
+
+    return ch;
 }
