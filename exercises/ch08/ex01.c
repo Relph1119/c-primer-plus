@@ -7,7 +7,7 @@ int main(void) {
     int ch;
     int count = 0;
 
-    while ((ch = getchar()) != EOF)
+    while ((ch = getchar()) != '&')
         count++;
     printf("%d characters read.\n", count);
     return 0;
