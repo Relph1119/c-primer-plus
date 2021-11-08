@@ -8,7 +8,7 @@ int main(void){
     int sum;
 
     printf("Enter lower and upper integer limits:");
-    scanf_s("%d %d", &lower, &upper);
+    scanf("%d %d", &lower, &upper);
 
 
     do{
@@ -18,7 +18,7 @@ int main(void){
         }
         printf("The sums of the squares from %d to %d is %d\n", lower * lower, upper * upper, sum);
         printf("Enter next set of limits:");
-        scanf_s("%d %d", &lower, &upper);
+        scanf("%d %d", &lower, &upper);
     } while(lower != upper);
 
     printf("Done");

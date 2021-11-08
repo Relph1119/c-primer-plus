@@ -5,7 +5,7 @@
 int main(void){
     int num;
     printf("Enter a number:");
-    scanf_s("%d", &num);
+    scanf("%d", &num);
     int limits = num + 10;
     while(num <= limits){
         printf("%d ", num);

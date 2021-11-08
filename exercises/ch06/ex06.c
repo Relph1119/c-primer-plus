@@ -8,9 +8,9 @@ int main(void){
     int square, cube;
 
     printf("Enter starting integer:");
-    scanf_s("%d", &lower);
+    scanf("%d", &lower);
     printf("Enter ending integer:");
-    scanf_s("%d", &upper);
+    scanf("%d", &upper);
 
     printf("%5s %10s %15s\n", "num", "square", "cube");
     for (index = lower; index <= upper; index++){

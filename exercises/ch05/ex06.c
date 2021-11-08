@@ -7,7 +7,7 @@ int main(void){
     int n;
 
     printf("Enter the upper limit:");
-    scanf_s("%d", &n);
+    scanf("%d", &n);
 
     count = 0;
     sum = 0;

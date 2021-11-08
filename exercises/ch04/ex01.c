@@ -7,9 +7,9 @@ int main(void){
     char last_name[40];
 
     printf("Enter your first name:");
-    scanf_s("%s", first_name, 40);
+    scanf("%s", first_name);
     printf("Enter your last name:");
-    scanf_s("%s", last_name, 40);
+    scanf("%s", last_name);
     printf("%s, %s\n", last_name, first_name);
     return 0;
 }

@@ -11,7 +11,7 @@ int main(void) {
     bool num_is_prime;
 
     printf("Enter a positive integer:");
-    while (scanf_s("%d", &limit) == 1 && limit > 0) {
+    while (scanf("%d", &limit) == 1 && limit > 0) {
         if (limit > 1)
             printf("Here are the prime numbers up through %d\n", limit);
         else

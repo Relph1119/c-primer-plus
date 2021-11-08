@@ -13,7 +13,7 @@ int main(void) {
         if (ch == '\n')
             continue;
         printf("Enter number of rows and columns:");
-        if (scanf_s("%d %d", &row, &col) != 2)
+        if (scanf("%d %d", &row, &col) != 2)
             break;
         ch_line_row(ch, col, row);
         printf("\nEnter next character (& to quit):");

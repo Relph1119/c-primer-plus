@@ -9,7 +9,7 @@ int main(void){
     int i, length;
 
     printf("Enter a word:");
-    scanf_s("%s", word, 20);
+    scanf("%s", word, 20);
 
     length = strlen(word) - 1;
     for(i = length; i >= 0; i--){

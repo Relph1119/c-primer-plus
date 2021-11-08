@@ -10,7 +10,7 @@ int main(void){
     int i, length;
 
     printf("Enter a sentence:");
-    scanf_s("%s", sentence, 20);
+    scanf("%s", sentence);
 
     length = strlen(sentence) - 1;
     for(i = length; i >= 0; i--){

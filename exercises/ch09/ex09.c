@@ -12,7 +12,7 @@ int main(void) {
     printf("Enter a number and the positive integer power");
     printf(" to which\nthe number will be raised. Enter q");
     printf(" to quit.\n");
-    while (scanf_s("%lf%d", &x, &exp) == 2) {
+    while (scanf("%lf%d", &x, &exp) == 2) {
         xpow = power(x, exp);
         printf("%.3g to the power %d is %.5g\n", x, exp, xpow);
         printf("Enter next pair of numbers or q to quit.\n");

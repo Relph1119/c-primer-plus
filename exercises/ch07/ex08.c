@@ -24,7 +24,7 @@ int main(void) {
     double pay;
 
     print_menu();
-    while ((scanf_s("%d", &pay_level)) == 1 && pay_level != 5) {
+    while ((scanf("%d", &pay_level)) == 1 && pay_level != 5) {
         if (pay_level == '\n')
             continue;
 
@@ -47,7 +47,7 @@ int main(void) {
                 continue;
         }
         printf("Enter the number of hours worked this week:");
-        scanf_s("%lf", &hours);
+        scanf("%lf", &hours);
         calc(pay, hours);
 
         print_menu();

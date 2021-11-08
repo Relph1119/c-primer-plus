@@ -8,7 +8,7 @@ int main(void) {
     unsigned n;
 
     printf("Enter a number:");
-    while (scanf_s("%u", &n) == 1) {
+    while (scanf("%u", &n) == 1) {
         printf("The Fibonacci(%d) value is %lu.\n", n, fibonacci(n));
         printf("Enter next number (q to quit):");
     }

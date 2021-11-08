@@ -10,7 +10,7 @@ int main(void){
 
     printf("Please enter %d integers.\n", SIZE);
     for (i=0; i < SIZE; i++){
-        scanf_s("%d", &vals[i]);
+        scanf("%d", &vals[i]);
     }
 
     printf("Here, in reverse order, are the values you entered:\n");

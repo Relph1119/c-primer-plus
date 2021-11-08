@@ -8,7 +8,7 @@ int main(void){
     float quarts, molecules;
 
     printf("Enter the number of quarts of water:");
-    scanf_s("%f", &quarts);
+    scanf("%f", &quarts);
     molecules = quarts * mass_qt / mass_mol;
     printf("%g quarts of water contain %e molecules.\n", quarts, molecules);
     return 0;

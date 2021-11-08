@@ -10,7 +10,7 @@ int main(void){
     char letter;
 
     printf("Enter a letter:");
-    scanf_s("%c", &letter);
+    scanf("%c", &letter);
     int count = letter - 'A' + 1;
     for(int i = 0; i < count; i++){
         print_blank(count - i + 1);

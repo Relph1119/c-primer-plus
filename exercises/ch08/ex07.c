@@ -49,7 +49,7 @@ int main(void) {
                 continue;
         }
         printf("Enter the number of hours worked this week:");
-        scanf_s("%lf", &hours);
+        scanf("%lf", &hours);
         calc(pay, hours);
 
         print_menu();

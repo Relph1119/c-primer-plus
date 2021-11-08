@@ -6,7 +6,7 @@
 int main(void){
     char name[40];
     printf("Enter your name:");
-    scanf_s("%s", name, 40);
+    scanf("%s", name);
     printf("\"%s\"\n", name);
     printf("\"%*s\"\n", 20, name);
     printf("\"%-*s\"\n", 20, name);

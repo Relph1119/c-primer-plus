@@ -10,7 +10,7 @@ int main(void){
     double odd_sum = 0;
     int odd_count = 0;
 
-    while (scanf_s("%d", &n) == 1 && n != 0){
+    while (scanf("%d", &n) == 1 && n != 0){
         if (n % 2 == 0){
             even_sum += n;
             even_count++;

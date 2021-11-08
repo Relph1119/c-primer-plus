@@ -16,7 +16,7 @@ int main(void) {
     double gross, net, taxes;
 
     printf("Enter the number of hours worked this week:");
-    scanf_s("%lf", &hours);
+    scanf("%lf", &hours);
 
     if (hours <= BASE_HRS) {
         gross = hours * BASE_PAY;

@@ -8,14 +8,14 @@ int main(void){
 
     printf("This program computes moduli\n");
     printf("Enter an integer to serve as the second operand:");
-    scanf_s("%d", &second_oper);
+    scanf("%d", &second_oper);
 
     printf("Now enter the first operand:");
-    scanf_s("%d", &first_oper);
+    scanf("%d", &first_oper);
     while(first_oper > 0){
         printf("%d %% %d is %d\n", first_oper, second_oper, first_oper % second_oper);
         printf("Enter next number for first operand (<= 0 to quit):");
-        scanf_s("%d", &first_oper);
+        scanf("%d", &first_oper);
     }
     printf("Done\n");
 

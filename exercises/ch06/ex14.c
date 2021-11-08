@@ -11,7 +11,7 @@ int main(void){
 
     printf("Enter %d numbers :", SIZE);
     for(i=0; i < SIZE; i++){
-        scanf_s("%lf", &arr[i]);
+        scanf("%lf", &arr[i]);
     }
 
     arr_total[0] = arr[0];

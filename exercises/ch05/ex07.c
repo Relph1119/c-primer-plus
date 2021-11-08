@@ -8,7 +8,7 @@ int main(void){
     double num;
 
     printf("Enter a floating-point value:");
-    scanf_s("%lf", &num);
+    scanf("%lf", &num);
     print_cube(num);
 
     return 0;

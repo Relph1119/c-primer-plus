@@ -10,7 +10,7 @@ int main(void){
 
     float num_cup;
     printf("Enter the num of Cup:");
-    scanf_s("%f", &num_cup);
+    scanf("%f", &num_cup);
     printf("%g(cup) of pint is %g.\n", num_cup, num_cup / pint);
     printf("%g(cup) of oz is %g.\n", num_cup, num_cup * cup);
     printf("%g(cup) of tablespoon is %g.\n", num_cup, num_cup * cup * oz);

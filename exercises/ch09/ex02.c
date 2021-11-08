@@ -9,7 +9,7 @@ int main(void) {
     int j, i;
     printf("Enter a character and two integers:\n");
     while ((ch = getchar()) != '\n') {
-        if (scanf_s("%d %d", &i, &j) != 2)
+        if (scanf("%d %d", &i, &j) != 2)
             break;
         chline(ch, i, j);
         while (getchar() != '\n')

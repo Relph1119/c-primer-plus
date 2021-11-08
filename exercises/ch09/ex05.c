@@ -8,7 +8,7 @@ int main(void) {
     double x, y;
 
     printf("Enter tow number (q to quit):");
-    while (scanf_s("%lf %lf", &x, &y) == 2) {
+    while (scanf("%lf %lf", &x, &y) == 2) {
         larger_of(&x, &y);
         printf("The modified values are %g and %g.\n", x, y);
         printf("Next two value (q to quit):");

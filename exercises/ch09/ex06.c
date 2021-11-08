@@ -9,7 +9,7 @@ int main(void) {
     double x, y, z;
 
     printf("Enter three number (q to quit):");
-    while (scanf_s("%lf %lf %lf", &x, &y, &z) == 3) {
+    while (scanf("%lf %lf %lf", &x, &y, &z) == 3) {
         handle(&x, &y, &z);
         printf("The values are %g, %g and %g.\n", x, y, z);
         printf("Next three value (q to quit):");

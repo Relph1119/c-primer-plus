@@ -39,17 +39,17 @@ int main(void) {
         switch (ch) {
             case 'a' :
                 printf("Enter pounds of artichokes: ");
-                scanf_s("%lf", &lb_temp);
+                scanf("%lf", &lb_temp);
                 lb_artichokes += lb_temp;
                 break;
             case 'b' :
                 printf("Enter pounds of beets: ");
-                scanf_s("%lf", &lb_temp);
+                scanf("%lf", &lb_temp);
                 lb_beets += lb_temp;
                 break;
             case 'c' :
                 printf("Enter pounds of carrots: ");
-                scanf_s("%lf", &lb_temp);
+                scanf("%lf", &lb_temp);
                 lb_carrots += lb_temp;
                 break;
             default :

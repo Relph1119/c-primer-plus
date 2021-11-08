@@ -18,7 +18,7 @@ int main(void) {
     double pay;
 
     print_menu();
-    while ((scanf_s("%d", &pay_level)) == 1 && pay_level != 5) {
+    while ((scanf("%d", &pay_level)) == 1 && pay_level != 5) {
         if (pay_level == '\n')
             continue;
 
@@ -41,7 +41,7 @@ int main(void) {
                 continue;
         }
         printf("Enter your salary:");
-        scanf_s("%lf", &salary);
+        scanf("%lf", &salary);
         calc(pay, salary);
 
         print_menu();

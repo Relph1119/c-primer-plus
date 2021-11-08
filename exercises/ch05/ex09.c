@@ -9,11 +9,11 @@ int main(void){
     int status;
     printf("Enter a number of fahrenheit temperature:");
 
-    status = scanf_s("%lf", &fahrenheit_temp);
+    status = scanf("%lf", &fahrenheit_temp);
     while (status == 1){
         temperatures(fahrenheit_temp);
         printf("Enter next fahrenheit temperature value (q or non-numeric to quit):");
-        status = scanf_s("%lf", &fahrenheit_temp);
+        status = scanf("%lf", &fahrenheit_temp);
     }
     printf("Done\n");
     return 0;

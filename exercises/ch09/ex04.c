@@ -8,7 +8,7 @@ int main(void) {
     double x, y;
 
     printf("Enter two double-type number (q to quit):");
-    while(scanf_s("%lf %lf", &x, &y) == 2) {
+    while(scanf("%lf %lf", &x, &y) == 2) {
         if (x == 0 || y == 0) {
             printf("Enter two double-type number (other than 0):");
             continue;
