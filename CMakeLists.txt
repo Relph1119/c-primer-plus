@@ -133,3 +133,13 @@ add_executable(ex11-14 exercises/ch11/ex14.c)
 add_executable(ex11-15 exercises/ch11/ex15.c)
 add_executable(ex11-16 exercises/ch11/ex16.c)
 
+# 第12章
+add_executable(ex12-01 exercises/ch12/ex01.c)
+add_executable(ex12-02 exercises/ch12/ex02/pe12-2b.c exercises/ch12/ex02/pe12-2a.c)
+add_executable(ex12-03 exercises/ch12/ex03/pe12-3b.c exercises/ch12/ex03/pe12-3a.c)
+add_executable(ex12-04 exercises/ch12/ex04.c)
+add_executable(ex12-05 exercises/ch12/ex05.c)
+add_executable(ex12-06 exercises/ch12/ex06/ex06.c exercises/ch12/ex06/s_and_r.c)
+add_executable(ex12-07 exercises/ch12/ex07.c)
+add_executable(ex12-08 exercises/ch12/ex08.c)
+add_executable(ex12-09 exercises/ch12/ex09.c)
