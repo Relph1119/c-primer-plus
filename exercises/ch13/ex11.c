@@ -3,7 +3,7 @@
 //
 #include <stdlib.h>
 #include <string.h>
-#include "stdio.h"
+#include <stdio.h>
 #define SLEN 256
 
 // ex11.exe The exercises/ch13/files/wordy

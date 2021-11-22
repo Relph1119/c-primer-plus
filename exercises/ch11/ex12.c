@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "ctype.h"
-#include "stdbool.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <stdbool.h>
 
 int main(void) {
     int ch;

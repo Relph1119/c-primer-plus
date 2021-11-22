@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/10/27.
 //
-#include "stdio.h"
+#include <stdio.h>
 int main(void){
     float pint = 2;
     float cup = 8;

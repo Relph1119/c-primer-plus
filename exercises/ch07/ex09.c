@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/3.
 //
-#include "stdio.h"
-#include "stdbool.h"
+#include <stdio.h>
+#include <stdbool.h>
 
 int main(void) {
     int limit;

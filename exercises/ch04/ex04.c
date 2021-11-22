@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/10/31.
 //
-#include "stdio.h"
+#include <stdio.h>
 int main(void){
     float height;
     char name[40];

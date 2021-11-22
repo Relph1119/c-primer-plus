@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #define LEN 80
 
 int main(void) {

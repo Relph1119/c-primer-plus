@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/16.
 //
-#include "stdio.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 
 #define LEN 14
 #define SCORES 3

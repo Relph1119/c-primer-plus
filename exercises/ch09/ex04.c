@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/5.
 //
-#include "stdio.h"
+#include <stdio.h>
 double harmean(double x, double y);
 
 int main(void) {

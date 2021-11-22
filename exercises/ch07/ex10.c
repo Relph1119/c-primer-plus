@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/3.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define AMT1 17850
 #define AMT2 23900
 #define AMT3 29750

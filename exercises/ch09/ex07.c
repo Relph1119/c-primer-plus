@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/5.
 //
-#include "stdio.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <ctype.h>
 int locate(int ch);
 
 int main(void) {

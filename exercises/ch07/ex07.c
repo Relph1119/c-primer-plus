@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/3.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define BASE_PAY 10
 #define BASE_HRS 40
 #define OVERTIME 1.5

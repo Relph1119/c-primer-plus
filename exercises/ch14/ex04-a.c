@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/16.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define SLEN 5
 struct person_name {
     char first_name[20];

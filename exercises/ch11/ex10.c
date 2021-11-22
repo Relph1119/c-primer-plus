@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 #define LEN 80
 
 char *s_gets(char *st, int n);

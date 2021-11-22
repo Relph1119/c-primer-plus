@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
+#include <stdio.h>
 #include "pe12-3a.h"
 
 void set_mode(int *mode) {

@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/18.
 //
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 
 #define FUN_NUM 4
 

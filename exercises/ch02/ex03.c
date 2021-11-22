@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/10/26.
 //
-#include "stdio.h"
+#include <stdio.h>
 int main(void){
     int age_years, age_days;
     age_years = 32;

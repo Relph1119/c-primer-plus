@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/2.
 //
-#include "stdio.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 
 int main(void){
     char word[20];

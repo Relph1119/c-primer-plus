@@ -2,9 +2,9 @@
 // Created by HRF on 2021/11/16.
 //
 
-#include "stdio.h"
-#include "string.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 int calc_days(char * month);
 
 struct month {

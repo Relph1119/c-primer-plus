@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/8.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define LEN 10
 void reverse(double target[], const double arr[], int n);
 void display_arr(const double arr[], int n);

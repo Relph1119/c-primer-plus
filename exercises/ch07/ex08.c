@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/3.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define BASE_PAY1 8.75
 #define BASE_PAY2 9.33
 #define BASE_PAY3 10.00

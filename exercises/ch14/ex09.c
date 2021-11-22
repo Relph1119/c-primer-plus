@@ -2,7 +2,7 @@
 // Created by HRF on 2021/11/17.
 //
 #include <string.h>
-#include "stdio.h"
+#include <stdio.h>
 
 #define AIRS 4
 #define SEATS 12

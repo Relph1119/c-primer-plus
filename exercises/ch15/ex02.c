@@ -2,9 +2,9 @@
 // Created by HRF on 2021/11/22.
 //
 
-#include "stdio.h"
-#include "string.h"
-#include "stdbool.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 
 int bstr_to_dec(const char *str);
 char *s_gets(char *st, int n);

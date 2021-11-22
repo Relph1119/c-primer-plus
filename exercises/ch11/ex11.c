@@ -2,10 +2,10 @@
 // Created by HRF on 2021/11/11.
 //
 
-#include "stdio.h"
-#include "ctype.h"
-#include "string.h"
-#include "stdbool.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdbool.h>
 #define SIZE 81
 #define LIM 4
 

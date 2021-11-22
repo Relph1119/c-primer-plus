@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/10.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define LEN 10
 char * get_n_char(char * str, int n);
 

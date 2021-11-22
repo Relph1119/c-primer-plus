@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/2.
 //
-#include "stdio.h"
+#include <stdio.h>
 double calc(double n, double m);
 
 int main(void){

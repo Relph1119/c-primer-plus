@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/2.
 //
-#include "stdio.h"
+#include <stdio.h>
 void print_blank(int num);
 void print_letter_asc(int num);
 void print_letter_desc(int num);

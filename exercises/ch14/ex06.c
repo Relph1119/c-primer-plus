@@ -3,7 +3,7 @@
 //
 #include <stdlib.h>
 #include <string.h>
-#include "stdio.h"
+#include <stdio.h>
 #define FIEL_PATH "exercises/ch14/files/baseball_team.dat"
 #define LEN 15
 

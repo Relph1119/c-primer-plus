@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/10.
 //
-#include "stdio.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <ctype.h>
 #define LEN 80
 #define MAX_LEN 10
 char * get_n_word(char * str, int n);

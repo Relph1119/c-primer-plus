@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "string.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #define LEN 80
 char *s_gets(char *st, int n);
 char *mystrncpy(char *str1, const char *str2, int num);

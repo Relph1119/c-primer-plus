@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/8.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define ARR_LEN 7
 #define TARGET_LEN 3
 void copy_arr(int target[], const int source[], int num);

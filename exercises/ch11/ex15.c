@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "string.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #define LEN 80
 char *s_gets(char *st, int n);
 int my_atoi(char * str);

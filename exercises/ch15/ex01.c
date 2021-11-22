@@ -1,10 +1,10 @@
 //
 // Created by HRF on 2021/11/22.
 //
-#include "stdio.h"
-#include "limits.h"
-#include "stdbool.h"
-#include "string.h"
+#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <string.h>
 
 char *s_gets(char *st, int n);
 bool check_value(const char *str);

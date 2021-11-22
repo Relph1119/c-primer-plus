@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
-#include "stdlib.h"
-#include "rand.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <rand.h>
 #define SIZE 1000
 void print_count(const int arr[]);
 void init_array(int * arr);

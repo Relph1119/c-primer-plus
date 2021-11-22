@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/15.
 //
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 // ex07-b.exe exercises/ch13/files/wordy exercises/ch13/files/eddy
 int main(int argc, char *argv[]) {

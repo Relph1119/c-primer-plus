@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/1.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define MIN_PER_HOUR 60
 int main(void){
     int minutes, hours, mins;

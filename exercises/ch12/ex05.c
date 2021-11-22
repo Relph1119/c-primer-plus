@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #define SIZE 100
 void print_array(int arr[], int n);
 void sort_array(int arr[], int n);

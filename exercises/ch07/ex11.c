@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/3.
 //
-#include "stdio.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <ctype.h>
 
 #define PRICE_ARTICHOKES 2.05
 #define PRICE_BEETS 1.15

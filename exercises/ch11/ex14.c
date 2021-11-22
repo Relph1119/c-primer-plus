@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int main(int argc, char *argv[]) {
     double num, exp;

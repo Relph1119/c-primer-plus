@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/5.
 //
-#include "stdio.h"
+#include <stdio.h>
 void to_base_n(int n, int base);
 
 int main(void)

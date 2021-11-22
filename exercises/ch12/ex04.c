@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define MAX_COUNT 10
 void foo(void);
 static int count = 0;

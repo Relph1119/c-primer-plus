@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/8.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define LEN 4
 void display_array(int arr[], int num);
 void add_arr(const int arr1[], const int arr2[], int result[], int n);

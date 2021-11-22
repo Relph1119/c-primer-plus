@@ -3,7 +3,7 @@
 //
 #include <string.h>
 #include <stdlib.h>
-#include "stdio.h"
+#include <stdio.h>
 
 #define ROWS 20
 #define COLS 30

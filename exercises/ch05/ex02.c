@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/1.
 //
-#include "stdio.h"
+#include <stdio.h>
 int main(void){
     int num;
     printf("Enter a number:");

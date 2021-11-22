@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/14.
 //
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int * make_array(int elem, int val);
 void show_array(const int ar [], int n);

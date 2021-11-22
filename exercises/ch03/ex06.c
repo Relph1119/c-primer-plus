@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/10/27.
 //
-#include "stdio.h"
+#include <stdio.h>
 int main(void){
     float mass_mol = 3.0e-23;
     float mass_qt = 950;

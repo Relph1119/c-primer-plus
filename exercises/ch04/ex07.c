@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/10/31.
 //
-#include "stdio.h"
-#include "float.h"
+#include <stdio.h>
+#include <float.h>
 int main(void){
     double ot_d = 1.0 / 3.0;
     float ot_f = 1.0 / 3.0;

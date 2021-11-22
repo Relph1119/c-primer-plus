@@ -1,8 +1,8 @@
 //
 // Created by HRF on 2021/11/4.
 //
-#include "stdio.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <ctype.h>
 
 int main(void) {
     int ch;

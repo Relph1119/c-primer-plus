@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/8.
 //
-#include "stdio.h"
+#include <stdio.h>
 #define ROWS 3
 #define COLS 5
 void display_array2d(double arr[][COLS], int rows);

@@ -1,7 +1,7 @@
 //
 // Created by HRF on 2021/11/5.
 //
-#include "stdio.h"
+#include <stdio.h>
 void ch_line_row(int ch, int c, int r);
 
 int main(void) {

@@ -2,9 +2,9 @@
 // Created by HRF on 2021/11/11.
 //
 
-#include "stdbool.h"
-#include "stdio.h"
-#include "string.h"
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
 #define LEN 80
 bool is_within(const char * str, char c);
 char * s_gets(char * st, int n);

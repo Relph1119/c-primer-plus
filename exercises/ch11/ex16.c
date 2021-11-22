@@ -1,9 +1,9 @@
 //
 // Created by HRF on 2021/11/11.
 //
-#include "stdio.h"
-#include "stdbool.h"
-#include "ctype.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[]) {
 

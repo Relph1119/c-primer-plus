@@ -1,10 +1,10 @@
 //
 // Created by HRF on 2021/11/16.
 //
-#include "stdio.h"
-#include "string.h"
-#include "ctype.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 int calc_days(int year, int month, int day);
 int get_month_number(char *month);
