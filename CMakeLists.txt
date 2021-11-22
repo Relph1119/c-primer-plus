@@ -188,3 +188,7 @@ add_executable(ex15-07 exercises/ch15/ex07.c)
 # 第16章
 add_executable(ex16-02 exercises/ch16/ex02.c)
 add_executable(ex16-03 exercises/ch16/ex03.c)
+add_executable(ex16-04 exercises/ch16/ex04.c)
+add_executable(ex16-05 exercises/ch16/ex05.c)
+add_executable(ex16-06 exercises/ch16/ex06.c)
+add_executable(ex16-07 exercises/ch16/ex07.c)
