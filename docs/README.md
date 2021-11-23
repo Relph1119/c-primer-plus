@@ -7,6 +7,10 @@
 https://relph1119.github.io/c-primer-plus/#/
 
 ## 运行环境
+**IDE：**CLion 2021.2版本   
+**Toolchains：**MinGW 6.0  
+**Debugger：**MinGW-w64 8.1
+
 ### 配置\[C/C++ IDE\]CLion
 https://www.cnblogs.com/bluestorm/p/12316676.html
 
