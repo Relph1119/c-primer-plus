@@ -10,16 +10,23 @@ int main(void){
     br();
     printf(", ");
     ic();
-    ic();
-    br();
     printf("\n");
+    ic();
+    printf("\n");
+    br();
     return 0;
 }
 
+/**
+ * 用户打印"Brazil, Russia"
+ */
 void br(void){
     printf("Brazil, Russia");
 }
 
+/**
+ * 用于打印“India, China”
+ */
 void ic(void){
-    printf("India, China\n");
+    printf("India, China");
 }

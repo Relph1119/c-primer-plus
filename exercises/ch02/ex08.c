@@ -14,11 +14,15 @@ int main(void){
 }
 
 void one_three(void){
+    // 打印one
     printf("one\n");
+    // 调用函数tow()
     two();
+    // 打印three
     printf("three\n");
 }
 
 void two(void){
+    // 打印tow
     printf("two\n");
 }

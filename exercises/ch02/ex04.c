@@ -14,10 +14,16 @@ int main(void){
     return 0;
 }
 
+/**
+ * 用于打印前3条信息
+ */
 void jolly(void){
     printf("For he's a jolly good fellow!\n");
 }
 
+/**
+ * 用于打印最后一条信息
+ */
 void deny(void){
     printf("Which nobody can deny!");
 }
