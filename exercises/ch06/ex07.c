@@ -4,15 +4,21 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void){
-    char word[20];
+#define LEN 40
+
+int main(void) {
+    char word[LEN];
     int i, length;
 
+    // 提示用户输入一个单词
     printf("Enter a word:");
-    scanf("%s", word, 20);
+    scanf("%s", word);
 
+    // 得到单词的长度
     length = strlen(word) - 1;
-    for(i = length; i >= 0; i--){
+    printf("The reverse of %s is ", word);
+    // 逆序打印这个单词
+    for (i = length; i >= 0; i--) {
         printf("%c", word[i]);
     }
 

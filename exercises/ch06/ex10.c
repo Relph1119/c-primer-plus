@@ -3,23 +3,23 @@
 //
 #include <stdio.h>
 
-int main(void){
+int main(void) {
     int lower, upper, index;
     int sum;
 
+    // 提示用户输入一个上限整数和一个下限整数
     printf("Enter lower and upper integer limits:");
-    scanf("%d %d", &lower, &upper);
-
-
-    do{
+    while (scanf("%d %d", &lower, &upper) == 2 && lower < upper) {
         sum = 0;
-        for(index = lower; index <= upper; index++){
+        // 求范围内所有整数的平方和
+        for (index = lower; index <= upper; index++) {
             sum += index * index;
         }
+        // 打印结果
         printf("The sums of the squares from %d to %d is %d\n", lower * lower, upper * upper, sum);
+        // 提示用户再次输入
         printf("Enter next set of limits:");
-        scanf("%d %d", &lower, &upper);
-    } while(lower != upper);
+    }
 
     printf("Done");
     return 0;

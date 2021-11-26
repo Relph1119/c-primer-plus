@@ -3,16 +3,27 @@
 //
 #include <stdio.h>
 
-int main(void){
-    const double rate_year = 0.8;
+int main(void) {
+    // 年利率
+    const double RATE_YEAR = 0.08;
 
-    int years = 0;
+    int year = 0;
+    // 总金额
     double chuckie = 100;
 
-    while (chuckie > 0) {
-        chuckie *= rate_year;
+    // 打印账户记录
+    printf("Here is Chuckie's account recode:\n");
+    printf("%5s %6s\n", "Year", "Account");
+    do {
+        // 年利率计算
+        chuckie = chuckie + chuckie * RATE_YEAR;
+        // 每年最后一天取10万美元
         chuckie -= 10;
-        years++;
-    }
-    printf("Investment values after %d years are empty.\n", years);
+        year++;
+        printf("%4d %8.2f\n", year, chuckie > 0 ? chuckie : 0);
+    } while (chuckie > 0);
+
+    // 打印结果
+    printf("%d years later, Chuckie's account is ZERO.\n", year);
+    return 0;
 }

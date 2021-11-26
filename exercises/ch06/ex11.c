@@ -2,20 +2,24 @@
 // Created by HRF on 2021/11/2.
 //
 #include <stdio.h>
+
 #define SIZE 8
 
-int main(void){
-    int vals[SIZE];
+int main(void) {
+    // 定义整数数组
+    int input[SIZE];
     int i;
 
+    // 提示用户输入8个整数
     printf("Please enter %d integers.\n", SIZE);
-    for (i=0; i < SIZE; i++){
-        scanf("%d", &vals[i]);
+    for (i = 0; i < SIZE; i++) {
+        scanf("%d", &input[i]);
     }
 
-    printf("Here, in reverse order, are the values you entered:\n");
-    for (i = SIZE - 1; i >= 0; i--){
-        printf("%d ", vals[i]);
+    // 逆序打印8个整数
+    printf("Here are the values in reverse order you entered:\n");
+    for (i = SIZE - 1; i >= 0; i--) {
+        printf("%d ", input[i]);
     }
     printf("\n");
 
