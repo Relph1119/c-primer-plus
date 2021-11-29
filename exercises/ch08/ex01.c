@@ -5,10 +5,14 @@
 
 int main(void) {
     int ch;
+    // 字符数
     int count = 0;
 
-    while ((ch = getchar()) != '&')
+    // 读取文件输入流，配置Redirect input from：exercises\ch08\files\file
+    while ((ch = getchar()) != '&') {
         count++;
+    }
+    // 打印字符总数
     printf("%d characters read.\n", count);
     return 0;
 }

@@ -5,23 +5,30 @@
 
 int main(void) {
     int ch;
-    int count = 1;
+    // 字符数
+    int count = 0;
 
     while ((ch = getchar()) != '&') {
-        if (ch == '\t') {
-            printf("\\t-%d", ch);
-            printf(" ");
-        } else if(ch == '\n') {
-            printf("\\n-%d", ch);
+        // 当满10个，则打印换行符
+        if (count++ == 10) {
             printf("\n");
-        } else if(count % 10 == 0){
-            printf("%c-%d", ch, ch);
-            printf("\n");
-        } else {
-            printf("%c-%d", ch, ch);
-            printf(" ");
+            count = 1;
         }
-        count++;
+        // 大于空格字符显示字符和相应的ASCII码
+        if (ch >= '\040') {
+            printf("%2c-%3d ", ch, ch);
+        } else if (ch == '\t') {
+            // 处理制表符
+            printf("\\t-%3d", ch);
+            printf(" ");
+        } else if (ch == '\n') {
+            // 处理换行符
+            printf("\\n-%3d\n", ch);
+            count = 0;
+        } else {
+            // 处理其他的非打印字符
+            printf("^%c-%3d", ch, (ch + 64));
+        }
     }
 
     return 0;
