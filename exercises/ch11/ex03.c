@@ -3,37 +3,47 @@
 //
 #include <stdio.h>
 #include <ctype.h>
+
 #define LEN 80
-char * get_word(char * str);
+// 设置停止词
+#define STOP '\n'
+
+char *get_word(char *str);
 
 int main(void) {
     char input[LEN];
 
-    while (get_word(input) != NULL)
+    printf("Please enter chars:\n");
+    while (get_word(input) != NULL) {
+        printf("The word is ");
         puts(input);
-    puts("Done.\n");
+        printf("Please enter chars (a newline to quit):\n");
+    }
+    puts("Done.");
 
     return 0;
 }
 
-char * get_word(char * str) {
+char *get_word(char *str) {
     int ch;
-    char * orig = str;
 
-    while ((ch = getchar()) != EOF && isspace(ch))
+    // 跳过前面所有的空白
+    while ((ch = getchar()) != STOP && (isspace(ch) || ispunct(ch)))
         continue;
-    if (ch == EOF)
-        return NULL;
-    else
-        *str++ = ch;
 
-    while ((ch = getchar()) != EOF && !isspace(ch))
-        *str++ = ch;
-    if (ch == EOF)
-        return NULL;
-    else {
+    // 读取单词
+    if (ch != STOP)
+        *str++ = (char) ch;
+
+    while ((ch = getchar()) != STOP && !(isspace(ch) || ispunct(ch)))
+        *str++ = (char) ch;
+    if (ch != STOP) {
+        // 丢弃输入行后的其余字符
         while (ch != '\n')
             ch = getchar();
-        return orig;
+        // 设置最后一个元素为空字符
+        *str++ = '\0';
+        return str;
     }
+    return NULL;
 }

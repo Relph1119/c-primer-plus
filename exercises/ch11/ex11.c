@@ -1,7 +1,6 @@
 //
 // Created by HRF on 2021/11/11.
 //
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -28,13 +27,16 @@ int main(void) {
     int ct = 0;
     char *ptstr[LIM];
 
-    printf("Input upt to %d lines. To stop, press the Enter key at a line's start.\n", LIM);
+    // 提示用户输入多个字符串
+    printf("Input string to %d lines. To stop, press the Enter key at a line's start.\n", LIM);
     while (ct < LIM && s_gets(input[ct], SIZE) != NULL && input[ct][0] != '\0') {
         ptstr[ct] = input[ct];
         ct++;
     }
 
+    // 打印菜单
     menu();
+    // 读取用户选择
     while ((choice = get_first()) != 'q') {
         if (choice == '\n')
             continue;
@@ -43,15 +45,19 @@ int main(void) {
 
         switch (choice) {
             case 'a':
+                // 打印源字符串列表
                 print_strings(ptstr, LIM);
                 break;
             case 'b':
+                // 以ASCII中的顺序打印字符串
                 print_sort_by_ascii(ptstr, LIM);
                 break;
             case 'c':
+                // 按长度递增顺序打印字符串
                 print_sort_by_length(ptstr, LIM);
                 break;
             case 'd':
+                // 按字符串中第1个单词长度打印字符串
                 print_sort_by_first_word_length(ptstr, LIM);
                 break;
             default:
@@ -77,6 +83,7 @@ void menu(void) {
 void print_strings(char * str[], int n) {
     printf("The input string lists are:\n");
     int i;
+    // 循环打印字符串
     for (i = 0; i < n; i++) {
         puts(str[i]);
     }
@@ -89,6 +96,7 @@ void print_sort_by_ascii(char * str[], int n) {
     char * temp;
     for(top = 0; top < n - 1; top++) {
         for (seek = top + 1; seek < n; seek++) {
+            // 对字符的ASCII进行比较
             if (strcmp(str[top], str[seek]) > 0) {
                 temp = str[top];
                 str[top] = str[seek];
@@ -109,6 +117,7 @@ void print_sort_by_length(char * str[], int n) {
     char * temp;
     for(top = 0; top < n - 1; top++) {
         for (seek = top + 1; seek < n; seek++) {
+            // 对字符串长度比较
             if (strlen(str[top]) > strlen(str[seek])) {
                 temp = str[top];
                 str[top] = str[seek];
@@ -129,6 +138,7 @@ void print_sort_by_first_word_length(char * str[], int n) {
     char * temp;
     for(top = 0; top < n - 1; top++) {
         for (seek = top + 1; seek < n; seek++) {
+            // 对字符串中第1个单词的长度进行比较
             if (get_first_word_length(str[top]) > get_first_word_length(str[seek])) {
                 temp = str[top];
                 str[top] = str[seek];
@@ -171,18 +181,21 @@ char *s_gets(char *st, int n) {
     return ret_val;
 }
 
+// 获取字符串中第1个单词的长度
 int get_first_word_length(char * str) {
     int ct = 0;
     bool inword = false;
 
     while (*str) {
+        // 当遇到空格时，跳出循环，ct已记录了第一个单词的长度
         if(isspace(*str) && inword)
             break;
         else {
+            // 如果没有遇到空格，表示本次循环还在单词中
             ct++;
             inword = true;
         }
         *str++;
     }
     return ct;
-}
+//}
