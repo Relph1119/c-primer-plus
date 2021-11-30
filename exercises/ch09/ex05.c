@@ -2,12 +2,14 @@
 // Created by HRF on 2021/11/5.
 //
 #include <stdio.h>
+
 void larger_of(double *p1, double *p2);
 
 int main(void) {
     double x, y;
 
-    printf("Enter tow number (q to quit):");
+    // 提示用户输入两个值
+    printf("Enter tow number:");
     while (scanf("%lf %lf", &x, &y) == 2) {
         larger_of(&x, &y);
         printf("The modified values are %g and %g.\n", x, y);
@@ -19,5 +21,6 @@ int main(void) {
 }
 
 void larger_of(double *p1, double *p2) {
-    *p1 = *p2 = *p1 > *p2? *p1 : *p2;
+    // 将两个数中较大的值进行重新赋值
+    *p1 = *p2 = *p1 > *p2 ? *p1 : *p2;
 }
