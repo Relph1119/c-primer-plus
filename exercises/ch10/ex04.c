@@ -2,7 +2,9 @@
 // Created by HRF on 2021/11/8.
 //
 #include <stdio.h>
+// 获取数组中最大值的下标
 int max_index_arr(const double arr[], int n);
+// 打印数组
 void display_arr(const double arr[], int n);
 
 int main(void) {
@@ -12,6 +14,7 @@ int main(void) {
 
     printf("The array is ");
     display_arr(arr, length);
+    // 获取数组中最大值的下标
     max_index = max_index_arr(arr, length);
     printf("The index of the largest value is %d\n", max_index);
 
@@ -22,7 +25,8 @@ int max_index_arr(const double arr[], int n) {
     int i;
     double max = arr[0];
     int index;
-    for(i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
+        // 如果是最大值，记录下标
         if (max < arr[i]) {
             max = arr[i];
             index = i;
@@ -36,7 +40,7 @@ void display_arr(const double arr[], int n) {
     printf("[");
     for (i = 0; i < n; i++) {
         printf("%g", arr[i]);
-        if (i != n - 1){
+        if (i != n - 1) {
             printf(" ");
         }
     }

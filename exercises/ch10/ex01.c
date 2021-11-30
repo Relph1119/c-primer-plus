@@ -22,6 +22,7 @@ int main(void) {
     printf(" YEAR    RAINFALL  (inches)\n");
     for (year = 0, total = 0; year < YEARS; year++) {             // for each year, sum rainfall for each month
         for (month = 0, subtot = 0; month < MONTHS; month++)
+            // 使用指针计算，*(rain+year)表示rain[year], *(*(rain + year) + month)表示rain[year][month]
             subtot += *(*(rain + year) + month);
         printf("%5d %15.1f\n", 2010 + year, subtot);
         total += subtot; // total for all years

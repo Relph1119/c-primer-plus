@@ -2,9 +2,14 @@
 // Created by HRF on 2021/11/8.
 //
 #include <stdio.h>
+
+// 带数组表示法的函数
 void copy_arr(double target[], const double source[], int num);
-void copy_ptr(double * target, double * source, int num);
-void copy_ptrs(double * target, double * start, const double * end);
+// 带指针表示法和指针递归的函数
+void copy_ptr(double *target, double *source, int num);
+// 带源数组名和指向源数组最后一个元素后面的元素指针的函数
+void copy_ptrs(double *target, double *start, const double *end);
+// 显示数组
 void display_array(double arr[], int num);
 
 int main(void) {
@@ -32,13 +37,14 @@ int main(void) {
 }
 
 void copy_arr(double target[], const double source[], int num) {
-    for(int i = 0; i < num; i++) {
+    for (int i = 0; i < num; i++) {
         target[i] = source[i];
     }
 }
 
-void copy_ptr(double * target, double * source, int num) {
+void copy_ptr(double *target, double *source, int num) {
     int i = 0;
+    // 进行指针递增
     while (i < num) {
         *target = *source;
         target++;
@@ -47,7 +53,8 @@ void copy_ptr(double * target, double * source, int num) {
     }
 }
 
-void copy_ptrs(double * target, double * start, const double * end) {
+void copy_ptrs(double *target, double *start, const double *end) {
+    // 循环判断头指针和尾指针
     while (start < end) {
         *target = *start;
         start++;
@@ -57,9 +64,9 @@ void copy_ptrs(double * target, double * start, const double * end) {
 
 void display_array(double arr[], int num) {
     printf("[");
-    for (int i = 0; i < num; i++){
+    for (int i = 0; i < num; i++) {
         printf("%g", arr[i]);
-        if(i != num - 1) {
+        if (i != num - 1) {
             printf(" ");
         }
     }

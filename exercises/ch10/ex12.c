@@ -5,9 +5,10 @@
 
 #define MONTHS 12    // number of months in a year
 #define YEARS   5    // number of years of data
-
+// 计算全年总降雨量
 float calc_total(const float arr[][MONTHS], int years);
-void calc_yearly_average(const float arr[][MONTHS], int years);
+// 计算月平均值
+void calc_monthly_average(const float arr[][MONTHS], int years);
 
 int main(void) {
     // initializing rainfall data for 2010 - 2014
@@ -24,11 +25,11 @@ int main(void) {
     printf("\nThe yearly average is %.1f inches.\n\n",
            total / YEARS);
 
-    calc_yearly_average(rain, YEARS);
+    calc_monthly_average(rain, YEARS);
     return 0;
 }
 
-void calc_yearly_average(const float arr[][MONTHS], int years) {
+void calc_monthly_average(const float arr[][MONTHS], int years) {
     int y, m;
     float subtot;
 
