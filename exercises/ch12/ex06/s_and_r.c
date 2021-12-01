@@ -1,6 +1,6 @@
 /* s_and_r.c -- file for rand1() and srand1()    */
 /*                uses ANSI C portable algorithm */
-#include <rand.h>
+#include "rand.h"
 
 static unsigned long int next = 1;  /* the seed  */
 

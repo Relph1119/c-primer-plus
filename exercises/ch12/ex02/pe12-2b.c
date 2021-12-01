@@ -1,5 +1,6 @@
 //
 // Created by HRF on 2021/11/14.
+// 与pe12-2a.c一起编译
 //
 #include <stdio.h>
 #include "pe12-2a.h"
