@@ -23,15 +23,6 @@ https://www.cnblogs.com/bluestorm/p/12316676.html
 docsify serve ./docs
 ```
 
-## 目录结构
-<pre>
-assets----------------------------------------------书中的示例代码
-|   +---codes---------------------------------------书中的示例代码
-exercises-------------------------------------------编程练习代码
-resources-------------------------------------------图片文件
-CMakeLists.txt--------------------------------------CMake自动编译文件
-</pre>
-
 ## 参考资料
 【1】[C Primer Plus 第6版 中文版习题解答](https://www.epubit.com/bookDetails?id=UBb600b59872ba)中配套资源的源代码  
 【2】[C Primer Plus 第六版 全部章节课后编程练习答案](https://www.shangmayuan.com/a/0d6db6fb3bb7427baec2ed2b.html)中的代码  
