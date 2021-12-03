@@ -4,43 +4,54 @@
 #include <ctype.h>
 #include "tree.h"
 
+// 显示菜单
 char menu(void);
-
+// 新增宠物
 void addpet(Tree *pt);
-
+// 删除一个宠物
 void droppet(Tree *pt);
-
+// 显示宠物列表
 void showpets(const Tree *pt);
-
+// 查找一个宠物
 void findpet(const Tree *pt);
-
 void printitem(Item item);
-
 void uppercase(char *str);
-
 char *s_gets(char *st, int n);
 
+/*
+ * input
+ * Quincy, pig
+ * Bennie Haha, parrot
+ * Hiram Jinx, domestic cat
+ * Hiram Jinx, pig
+ */
 int main(void) {
     Tree pets;
     char choice;
 
+    // 初始化二叉查找树
     InitializeTree(&pets);
     while ((choice = menu()) != 'q') {
         switch (choice) {
             case 'a' :
+                // 新增宠物
                 addpet(&pets);
                 break;
             case 'l' :
+                // 显示宠物列表
                 showpets(&pets);
                 break;
             case 'f' :
+                // 查找一个宠物
                 findpet(&pets);
                 break;
             case 'n' :
+                // 统计宠物个数
                 printf("%d pets in club\n",
                        TreeItemCount(&pets));
                 break;
             case 'd' :
+                // 删除宠物
                 droppet(&pets);
                 break;
             default  :
@@ -97,8 +108,6 @@ void addpet(Tree *pt) {
     }
 }
 
-
-
 void showpets(const Tree *pt) {
     if (TreeIsEmpty(pt))
         puts("No entries!");
@@ -120,7 +129,7 @@ void findpet(const Tree *pt) {
 
     if (TreeIsEmpty(pt)) {
         puts("No entries!");
-        return;     /* quit function if tree is empty */
+        return;
     }
 
     puts("Please enter name of pet you wish to find:");
@@ -141,7 +150,7 @@ void droppet(Tree *pt) {
 
     if (TreeIsEmpty(pt)) {
         puts("No entries!");
-        return;     /* quit function if tree is empty */
+        return;
     }
 
     puts("Please enter name of pet you wish to delete:");
@@ -179,4 +188,3 @@ char *s_gets(char *st, int n) {
     }
     return ret_val;
 }
-

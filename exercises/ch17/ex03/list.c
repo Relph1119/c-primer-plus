@@ -1,29 +1,30 @@
 /* list.c -- functions supporting list operations */
-#include <stdio.h>
-#include <stdlib.h>
 #include "list.h"
 
-/* local function prototype */
+/* 局部函数原型 */
 static void CopyToNode(Item item, Node *pnode);
 
-/* interface functions   */
-/* set the list to empty */
+/* 接口函数 */
+
+// 把链表设置为空
 void InitializeList(List *plist) {
+    // 初始化项数为0
     plist->items = 0;
 }
 
-/* returns true if list is empty */
+// 如果链表为空，返回true
 bool ListIsEmpty(const List *plist) {
+    // 如果项数为0，返回true，否则返回false
     if (plist->items == 0)
         return true;
     else
         return false;
 }
 
-/* returns true if list is full */
+// 如果链表已满，返回true
 bool ListIsFull(const List *plist) {
     bool full;
-
+    // 如果项数等于MAXSIZE，返回true，否则返回false
     if (plist->items == MAXSIZE)
         full = true;
     else
@@ -32,35 +33,34 @@ bool ListIsFull(const List *plist) {
     return full;
 }
 
-/* returns number of nodes */
+// 返回节点的数量
 unsigned int ListItemCount(const List *plist) {
-
+    // 返回项数
     return plist->items;
 }
 
-/* creates node to hold item and adds it to the end of */
-/* the list pointed to by plist (slow implementation)  */
+// 创建存储项的节点，并将其添加至由plist指向的链表末尾（较慢的实现）
 bool AddItem(Item item, List *plist) {
     if (plist->items == MAXSIZE) {
+        // 如果已满，返回false
         return false;
     } else {
+        // 添加新项，项数加1，返回true
         plist->entries[plist->items] = item;
         plist->items++;
         return true;
     }
 }
 
-/* visit each node and execute function pointed to by pfun */
+// 访问每个节点并执行pfun指向的函数
 void Traverse(const List *plist, void (*pfun)(Item item)) {
-    int i;
-
-    for (i = 0; i < plist->items; i++) {
+    for (int i = 0; i < plist->items; i++) {
         (*pfun)(plist->entries[i]);
     }
 }
 
-/* free memory allocated by malloc() */
-/* set list pointer to NULL          */
+// 释放由malloc()分配的内存，设置链表指针为NULL
 void EmptyTheList(List *plist) {
+    // 清空列表的项数
     plist->items = 0;
 }

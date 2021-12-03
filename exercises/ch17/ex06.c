@@ -6,35 +6,35 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define SIZE 10
-
-void init_list(int nums[], int n);
-
-void show_list(int nums[], int n);
-
-int list_compare(const void *p1, const void *p2);
+#define SIZE 20
+// 初始化数组
+void init_array(int nums[], int n);
+// 显示数组内容
+void show_array(int nums[], int n);
+// 比较
+int compare(const void *p1, const void *p2);
 
 bool inarray(const int arr[], int n, int val);
 
 int main(void) {
     int nums[SIZE];
-    init_list(nums, SIZE);
     int num;
     bool found;
 
-    puts("There are UNSORTED numbers list :");
-    show_list(nums, SIZE);
-
-    qsort(nums, SIZE, sizeof(int), list_compare);
-
+    // 初始化数据，随机初始值（1~99）
+    init_array(nums, SIZE);
+    // 打印已排序的数组
     puts("There are SORTED numbers list :");
-    show_list(nums, SIZE);
+    show_array(nums, SIZE);
 
+    // 使用二分查找数字
     printf("Enter an integer to search for:");
     while (scanf("%d", &num) == 1) {
+        while (getchar() != '\n')
+            continue;
         found = inarray(nums, SIZE, num);
         printf("%d %s in the array.\n", num, found ? "is" : "isn't");
-        printf("Enter next integer to search (q to quit): ");
+        printf("Enter next integer to search (q to quit):");
     }
     printf("Bye.\n");
 
@@ -65,7 +65,7 @@ bool inarray(const int arr[], int n, int val) {
     return found;
 }
 
-int list_compare(const void *p1, const void *p2) {
+int compare(const void *p1, const void *p2) {
     const int *ps1 = (const int *) p1;
     const int *ps2 = (const int *) p2;
 
@@ -77,13 +77,16 @@ int list_compare(const void *p1, const void *p2) {
         return -1;
 }
 
-void init_list(int nums[], int n) {
+void init_array(int nums[], int n) {
     srand(time(0));
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
         nums[i] = rand() % 100 + 1;
+    }
+    // 对数组排序
+    qsort(nums, SIZE, sizeof(int), compare);
 }
 
-void show_list(int nums[], int n) {
+void show_array(int nums[], int n) {
     for (int i = 0; i < n; i++)
         printf(" %d", nums[i]);
     putchar('\n');

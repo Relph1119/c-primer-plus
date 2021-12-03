@@ -3,20 +3,23 @@
 //
 /* films2.c -- using a linked list of structures */
 #include <stdio.h>
-#include <stdlib.h>      /* has the malloc prototype      */
-#include <string.h>      /* has the strcpy prototype      */
+#include <stdlib.h>
+#include <string.h>
 
-#define TSIZE    45      /* size of array to hold title   */
+#define TSIZE 45
 
 struct film {
+    // 电影名称
     char title[TSIZE];
+    // 评分
     int rating;
-    struct film *next;  /* points to next struct in list */
+    // 指向链表中的下一个结构
+    struct film *next;
+    // 指向链表中的前一个结构
+    struct film *prev;
 };
 
 char *s_gets(char *st, int n);
-
-void show_reverse(const struct film *p_film);
 
 /*
  * input movie:
@@ -26,28 +29,38 @@ void show_reverse(const struct film *p_film);
  */
 int main(void) {
     struct film *head = NULL;
+    // 创建前序结构指针和当前结构指针
     struct film *prev, *current;
     char input[TSIZE];
 
-    /* Gather  and store information          */
+    // 收集并存储信息
     puts("Enter first movie title:");
     while (s_gets(input, TSIZE) != NULL && input[0] != '\0') {
         current = (struct film *) malloc(sizeof(struct film));
-        if (head == NULL)       /* first structure       */
+        if (head == NULL) {
             head = current;
-        else                    /* subsequent structures */
+            head->prev = NULL;
+        } else {
+            // 前一个节点的next指针，指向当前节点
             prev->next = current;
+            // 当前指针的prev指针，指向前一个节点
+            current->prev = prev;
+        }
+
         current->next = NULL;
+        // 给电影名称赋值
         strcpy(current->title, input);
+        // 提示用户输入评分
         puts("Enter your rating <0-10>:");
         scanf("%d", &current->rating);
         while (getchar() != '\n')
             continue;
         puts("Enter next movie title (empty line to stop):");
+        // 将指针移动到下一个
         prev = current;
     }
 
-    /* Show list of movies                    */
+    // 正序显示电影信息
     if (head == NULL)
         printf("No data entered. ");
     else
@@ -59,28 +72,28 @@ int main(void) {
         current = current->next;
     }
 
-    // 采用递归，逆序显示电影列表
+    // 采用双向链表，逆序显示电影列表
     if (head != NULL) {
         printf("\nHere is the movie list in reverse order:\n");
-        show_reverse(head);
+        current = prev;
+        while (current != NULL) {
+            printf("Movie: %s  Rating: %d\n",
+                   current->title, current->rating);
+            // 向前序节点移动
+            current = current->prev;
+        }
     }
 
-    /* Program done, so free allocated memory */
     current = head;
     while (current != NULL) {
+        head = current->next;
         free(current);
-        current = current->next;
+        current = head;
     }
 
+    printf("Bye!\n");
 
     return 0;
-}
-
-void show_reverse(const struct film *p_film) {
-    if (p_film->next != NULL) {
-        show_reverse(p_film->next);
-    }
-    printf("Movie: %s  Rating: %d\n", p_film->title, p_film->rating);
 }
 
 char *s_gets(char *st, int n) {

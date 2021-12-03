@@ -1,7 +1,6 @@
 //
 // Created by HRF on 2021/11/23.
 //
-
 #include "stack.h"
 
 void InitializeStack(Stack *ps) {

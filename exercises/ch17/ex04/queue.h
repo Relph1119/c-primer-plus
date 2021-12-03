@@ -1,79 +1,83 @@
 /* queue.h -- interface for a queue */
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
+
 #include <stdbool.h>
 
-// INSERT ITEM TYPE HERE
-// FOR EXAMPLE,
-//typedef int Item;  // for use_q.c
-// OR typedef struct item {int gumption; int charisma;} Item;
-// OR  (for mall.c)
-/**/
- typedef struct item
- {
- long arrive;      // the time when a customer joins the queue
- int processtime;  // the number of consultation minutes desired
- } Item;
-/**/
- 
+typedef struct item {
+    // 一位顾客加入队列的时间
+    long arrive;
+    // 该顾客咨询时花费的时间
+    int processtime;
+} Item;
+
 #define MAXQUEUE 10
 
-typedef struct node
-{
+typedef struct node {
     Item item;
-    struct node * next;
+    struct node *next;
 } Node;
 
-typedef struct queue
-{
-    Node * front;  /* pointer to front of queue  */
-    Node * rear;   /* pointer to rear of queue   */
-    int items;     /* number of items in queue   */
+typedef struct queue {
+    // 指向队列首项的指针
+    Node *front;
+    // 指向队列尾项的指针
+    Node *rear;
+    // 队列中的项数
+    int items;
 } Queue;
 
-/* operation:        initialize the queue                       */
-/* precondition:     pq points to a queue                       */
-/* postcondition:    queue is initialized to being empty        */
-void InitializeQueue(Queue * pq);
+/*
+ * 操作:       初始化队列
+ * 前提条件:    pq指向一个队列
+ * 后置条件:    队列被初始化为空
+ */
+void InitializeQueue(Queue *pq);
 
-/* operation:        check if queue is full                     */
-/* precondition:     pq points to previously initialized queue  */
-/* postcondition:   returns True if queue is full, else False   */
-bool QueueIsFull(const Queue * pq);
+/*
+ * 操作:       检查队列是否已满
+ * 前提条件:    pq指向之前被初始化的队列
+ * 后置条件:    如果队列已满，则返回true，否则返回false
+ */
+bool QueueIsFull(const Queue *pq);
 
-/* operation:        check if queue is empty                    */
-/* precondition:     pq points to previously initialized queue  */
-/* postcondition:    returns True if queue is empty, else False */
+/*
+ * 操作:       检查队列是否为空
+ * 前提条件:    pq指向之前被初始化的队列
+ * 后置条件:    如果队列为空，则返回true，否则返回false
+ */
 bool QueueIsEmpty(const Queue *pq);
 
-/* operation:        determine number of items in queue         */
-/* precondition:     pq points to previously initialized queue  */
-/* postcondition:    returns number of items in queue           */
-int QueueItemCount(const Queue * pq);
+/*
+ * 操作:       确定队列中的项数
+ * 前提条件:    pq指向之前被初始化的队列
+ * 后置条件:    返回队列中的项数
+ */
+int QueueItemCount(const Queue *pq);
 
-/* operation:        add item to rear of queue                  */
-/* precondition:     pq points to previously initialized queue  */
-/*                   item is to be placed at rear of queue      */
-/* postcondition:    if queue is not empty, item is placed at   */
-/*                   rear of queue and function returns         */
-/*                   True; otherwise, queue is unchanged and    */
-/*                   function returns False                     */
-bool EnQueue(Item item, Queue * pq);
+/*
+ * 操作:       在队列末尾添加项
+ * 前提条件:    pq指向之前被初始化的队列
+ *             item是要被添加在队列末尾的项
+ * 后置条件:    如果队列不为空，item将被添加到队列的末尾，该函数返回true
+ *             否则队列不改变，该函数返回false
+ */
+bool EnQueue(Item item, Queue *pq);
 
-/* operation:        remove item from front of queue            */
-/* precondition:     pq points to previously initialized queue  */
-/* postcondition:    if queue is not empty, item at head of     */
-/*                   queue is copied to *pitem and deleted from */
-/*                   queue, and function returns True; if the   */
-/*                   operation empties the queue, the queue is  */
-/*                   reset to empty. If the queue is empty to   */
-/*                   begin with, queue is unchanged and the     */
-/*                   function returns False                     */
-bool DeQueue(Item *pitem, Queue * pq);
+/*
+ * 操作:        从队列的开头删除项
+ * 前提条件:     pq指向之前被初始化的队列
+ * 后置条件:    如果队列不为空，队列首端的item将被拷贝到*pitem中，并被删除，且函数返回true；
+ *             如果该操作使得队列为空，则重置队列为空
+ *             如果队列在操作前为空，该函数返回false
+ */
+bool DeQueue(Item *pitem, Queue *pq);
 
-/* operation:        empty the queue                            */
-/* precondition:     pq points to previously initialized queue  */
-/* postconditions:   the queue is empty                         */
-void EmptyTheQueue(Queue * pq);
+/*
+ * 操作:        清空队列
+ * 前提条件:     pq指向之前被初始化的队列
+ * 后置条件:     队列被清空
+ */
+void EmptyTheQueue(Queue *pq);
 
 #endif

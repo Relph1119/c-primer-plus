@@ -1,8 +1,8 @@
 /* films3.c -- using an ADT-style linked list */
 /* compile with list.c                        */
 #include <stdio.h>
-#include <stdlib.h>    /* prototype for exit() */
-#include "list.h"      /* defines List, Item   */
+#include <stdlib.h>
+#include "list.h"
 #include <string.h>
 
 void showmovies(Item item);
@@ -19,14 +19,14 @@ int main(void) {
     List movies;
     Item temp;
 
-    /* initialize       */
+    // 初始化
     InitializeList(&movies);
     if (ListIsFull(&movies)) {
         fprintf(stderr, "No memory available! Bye!\n");
         exit(1);
     }
 
-    /* gather and store */
+    // 获取用户输入并存储
     puts("Enter first movie title:");
     while (s_gets(temp.title, TSIZE) != NULL && temp.title[0] != '\0') {
         puts("Enter your rating <0-10>:");
@@ -44,7 +44,7 @@ int main(void) {
         puts("Enter next movie title (empty line to stop):");
     }
 
-    /* display          */
+    // 显示
     if (ListIsEmpty(&movies))
         printf("No data entered. ");
     else {
@@ -54,7 +54,7 @@ int main(void) {
     printf("You entered %d movies.\n", ListItemCount(&movies));
 
 
-    /* clean up         */
+    // 清理
     EmptyTheList(&movies);
     printf("Bye!\n");
 

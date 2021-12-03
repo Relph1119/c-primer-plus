@@ -1,50 +1,65 @@
 // mall.c -- use the Queue interface
 // compile with queue.c
 #include <stdio.h>
-#include <stdlib.h>    // for rand() and srand()
-#include <time.h>      // for time()
-#include "queue.h"     // change Item typedef
+#include <stdlib.h>
+#include <time.h>
+#include "queue.h"
 
 #define MIN_PER_HR 60.0
 
-bool newcustomer(double x);   // is there a new customer?
-Item customertime(long when); // set customer parameters
-
+// 是否有新顾客到来
+bool newcustomer(double x);
+// 设置顾客的参数
+Item customertime(long when);
 
 struct Booth {
     Queue line;
-    int hours, perhour, wait_time;
-    long cycle, cyclelimit, turnaways;
-    long customers, served, sum_line, line_wait;
+    // 模拟的小时数
+    int hours;
+    // 每小时平均多少位顾客
+    int perhour;
+    // 从当前到Sigmund空闲所需的时间
+    int wait_time;
+    // 循环计数器、计数器的上限
+    long cycle, cyclelimit;
+    // 因队列已满被拒的顾客数量
+    long turnaways;
+    // 加入队列的顾客数量
+    long customers;
+    // 在模拟期间咨询过Sigmund的顾客数量
+    long served;
+    // 累计的队列总长
+    long sum_line;
+    // 队列累计的等待时间
+    long line_wait;
+    // 顾客到来的平均时间
     double min_per_cust;
 };
 
+// 初始化摊位
 void init_booth_list(struct Booth list[], int n);
 
 int main(void) {
     Item temp;
     struct Booth booth_list[2];
 
+    // 初始化2个摊位
     init_booth_list(booth_list, 2);
-    srand((unsigned int) time(0)); // random initializing of rand()
+    srand((unsigned int) time(0));
 
+    // 对摊位进行初始化
     puts("Case Study: Sigmund Lander's Advice Booth");
-    puts("Enter the number of simulation hours for Queue1:");
-    scanf("%d", &booth_list[0].hours);
-    booth_list[0].cyclelimit = MIN_PER_HR * booth_list[0].hours;
+    for(int i = 0; i < 2; i++) {
+        printf("Enter the number of simulation hours for Queue%d:", i + 1);
+        scanf("%d", &booth_list[i].hours);
+        booth_list[i].cyclelimit = MIN_PER_HR * booth_list[i].hours;
 
-    puts("Enter the number of simulation hours for Queue2:");
-    scanf("%d", &booth_list[1].hours);
-    booth_list[1].cyclelimit = MIN_PER_HR * booth_list[1].hours;
+        printf("Enter the average number of customers per hour for Queue%d:", i + 1);
+        scanf("%d", &booth_list[i].perhour);
+        booth_list[i].min_per_cust = MIN_PER_HR / booth_list[i].perhour;
+    }
 
-    puts("Enter the average number of customers per hour for Queue1:");
-    scanf("%d", &booth_list[0].perhour);
-    booth_list[0].min_per_cust = MIN_PER_HR / booth_list[0].perhour;
-
-    puts("Enter the average number of customers per hour for Queue2:");
-    scanf("%d", &booth_list[1].perhour);
-    booth_list[1].min_per_cust = MIN_PER_HR / booth_list[1].perhour;
-
+    // for循环
     for (int i = 0; i < 2; i++) {
         for (booth_list[i].cycle = 0; booth_list[i].cycle < booth_list[i].cyclelimit; booth_list[i].cycle++) {
             if (newcustomer(booth_list[i].min_per_cust)) {
@@ -98,8 +113,10 @@ void init_booth_list(struct Booth list[], int n) {
     }
 }
 
-// x = average time, in minutes, between customers 
-// return value is true if customer shows up this minute
+/*
+ * x是顾客到来的平均时间（单位：分钟）
+ * 如果1分钟内有顾客到来，则返回true
+ */
 bool newcustomer(double x) {
     if (rand() * x / RAND_MAX < 1)
         return true;
@@ -107,10 +124,10 @@ bool newcustomer(double x) {
         return false;
 }
 
-// when is the time at which the customer arrives
-// function returns an Item structure with the arrival time
-// set to when and the processing time set to a random value
-// in the range 1 - 3
+/*
+ * when是顾客到来的时间
+ * 该函数返回一个Item结构，该顾客到来的时间设置为when，咨询时间设置为1~3的随机值
+ */
 Item customertime(long when) {
     Item cust;
 

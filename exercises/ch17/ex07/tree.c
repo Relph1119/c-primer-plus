@@ -4,13 +4,12 @@
 #include <stdlib.h>
 #include "tree.h"
 
-/* local data type */
+/* 局部数据类型 */
 typedef struct pair {
     Trnode *parent;
     Trnode *child;
 } Pair;
 
-/* protototypes for local functions */
 static Trnode *MakeNode(const Item *pi);
 
 static bool ToLeft(const Item *i1, const Item *i2);
@@ -27,7 +26,9 @@ static void DeleteNode(Trnode **ptr);
 
 static void DeleteAllNodes(Trnode *ptr);
 
-/* function definitions */
+void find_word(const Tree *pt);
+
+/* 函数定义 */
 void InitializeTree(Tree *ptree) {
     ptree->root = NULL;
     ptree->size = 0;
@@ -51,66 +52,54 @@ bool AddItem(const Item *pi, Tree *ptree) {
 
     if (TreeIsFull(ptree)) {
         fprintf(stderr, "Tree is full\n");
-        return false;             /* early return           */
+        return false;
     }
     if ((seek = SeekItem(pi, ptree)).child != NULL) {
-        // 添加次数
+        // 如果输入数据重复 则在原数据上的标记数量加 1
         seek.child->item.count++;
-        return true;             /* early return           */
+        return true;
     }
-    new_node = MakeNode(pi);      /* points to new node     */
+    new_node = MakeNode(pi);
     if (new_node == NULL) {
         fprintf(stderr, "Couldn't create node\n");
-        return false;             /* early return           */
+        return false;
     }
-    /* succeeded in creating a new node */
+    // 成功创建一个新节点
     ptree->size++;
 
-    if (ptree->root == NULL)      /* case 1: tree is empty  */
-        ptree->root = new_node;   /* new node is tree root  */
-    else                          /* case 2: not empty      */
-        AddNode(new_node, ptree->root); /* add node to tree  */
+    if (ptree->root == NULL) {
+        // 树为空，新节点为树的根节点
+        ptree->root = new_node;
+    } else {
+        // 不为空，在树中添加新节点
+        AddNode(new_node, ptree->root);
+    }
 
-    return true;                  /* successful return      */
+    return true;
 }
 
 bool InTree(const Item *pi, const Tree *ptree) {
     return (SeekItem(pi, ptree).child == NULL) ? false : true;
 }
 
-const Item *WhereInTree(const Item *pi, const Tree *ptree) {
-    Trnode * p_node;
-    p_node = SeekItem(pi, ptree).child;
-    if (p_node != NULL) {
-        return &(p_node->item);
-    } else {
-        return NULL;
-    }
-}
-
 bool DeleteItem(const Item *pi, Tree *ptree) {
     Pair look;
-
     look = SeekItem(pi, ptree);
     if (look.child == NULL)
         return false;
-    if (look.child->item.count > 0) {
-        look.child->item.count--;
-    } else {
-        if (look.parent == NULL)      /* delete root item       */
-            DeleteNode(&ptree->root);
-        else if (look.parent->left == look.child)
-            DeleteNode(&look.parent->left);
-        else
-            DeleteNode(&look.parent->right);
-        ptree->size--;
-    }
+
+    if (look.parent == NULL)
+        DeleteNode(&ptree->root);
+    else if (look.parent->left == look.child)
+        DeleteNode(&look.parent->left);
+    else
+        DeleteNode(&look.parent->right);
+    ptree->size--;
 
     return true;
 }
 
 void Traverse(const Tree *ptree, void (*pfun)(Item item)) {
-
     if (ptree != NULL)
         InOrder(ptree->root, pfun);
 }
@@ -122,8 +111,6 @@ void DeleteAll(Tree *ptree) {
     ptree->size = 0;
 }
 
-
-/* local functions */
 static void InOrder(const Trnode *root, void (*pfun)(Item item)) {
     if (root != NULL) {
         InOrder(root->left, pfun);
@@ -145,17 +132,16 @@ static void DeleteAllNodes(Trnode *root) {
 
 static void AddNode(Trnode *new_node, Trnode *root) {
     if (ToLeft(&new_node->item, &root->item)) {
-        if (root->left == NULL)      /* empty subtree       */
-            root->left = new_node;   /* so add node here    */
+        if (root->left == NULL)
+            root->left = new_node;
         else
-            AddNode(new_node, root->left);/* else process subtree*/
+            AddNode(new_node, root->left);
     } else if (ToRight(&new_node->item, &root->item)) {
         if (root->right == NULL)
             root->right = new_node;
         else
             AddNode(new_node, root->right);
-    } else                         /* should be no duplicates */
-    {
+    } else {
         fprintf(stderr, "location error in AddNode()\n");
         exit(1);
     }
@@ -181,7 +167,6 @@ static Trnode *MakeNode(const Item *pi) {
     new_node = (Trnode *) malloc(sizeof(Trnode));
     if (new_node != NULL) {
         new_node->item = *pi;
-        new_node->item.count = 1;
         new_node->left = NULL;
         new_node->right = NULL;
     }
@@ -195,7 +180,7 @@ static Pair SeekItem(const Item *pi, const Tree *ptree) {
     look.child = ptree->root;
 
     if (look.child == NULL)
-        return look;                        /* early return   */
+        return look;
 
     while (look.child != NULL) {
         if (ToLeft(pi, &(look.child->item))) {
@@ -204,16 +189,17 @@ static Pair SeekItem(const Item *pi, const Tree *ptree) {
         } else if (ToRight(pi, &(look.child->item))) {
             look.parent = look.child;
             look.child = look.child->right;
-        } else       /* must be same if not to left or right    */
-            break; /* look.child is address of node with item */
+        } else {
+            // 如果前两种情况都不满足，则必定是相等的情况，look.child目标项的节点
+            break;
+        }
     }
 
-    return look;                       /* successful return   */
+    return look;
 }
 
-static void DeleteNode(Trnode **ptr)
-/* ptr is address of parent member pointing to target node  */
-{
+// ptr是指向目标节点的父节点指针成员的地址
+static void DeleteNode(Trnode **ptr) {
     Trnode *temp;
 
     if ((*ptr)->left == NULL) {
@@ -224,14 +210,30 @@ static void DeleteNode(Trnode **ptr)
         temp = *ptr;
         *ptr = (*ptr)->left;
         free(temp);
-    } else    /* deleted node has two children */
-    {
-        /* find where to reattach right subtree */
+    } else {
+        // 找到重写连接右子树的位置
         for (temp = (*ptr)->left; temp->right != NULL; temp = temp->right)
             continue;
         temp->right = (*ptr)->right;
         temp = *ptr;
         *ptr = (*ptr)->left;
         free(temp);
+    }
+}
+
+void find_word(const Tree *pt) {
+    Item temp;
+    Pair pair;
+    int t;
+
+    printf("Enter the word you search:\n");
+    scanf("%s", temp.word);
+    while (getchar() != '\n');
+    pair = SeekItem(&temp, pt);
+    if (pair.child == NULL)
+        printf("No entries!\n");
+    else {
+        t = pair.child->item.count;
+        printf("%s appears %d times\n", temp.word, t);
     }
 }

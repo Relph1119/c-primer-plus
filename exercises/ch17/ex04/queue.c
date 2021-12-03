@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "queue.h"
 
-/* local functions */
+/* 局部函数 */
 static void CopyToNode(Item item, Node * pn);
 static void CopyToItem(Node * pn, Item * pi);
 
@@ -43,11 +43,15 @@ bool EnQueue(Item item, Queue * pq)
     CopyToNode(item, pnew);
     pnew->next = NULL;
     if (QueueIsEmpty(pq))
-        pq->front = pnew;           /* item goes to front     */
+        // 项位于队列的首端
+        pq->front = pnew;
     else
-        pq->rear->next = pnew;      /* link at end of queue   */
-    pq->rear = pnew;                /* record location of end */
-    pq->items++;                    /* one more item in queue */
+        // 链接到队列的尾端
+        pq->rear->next = pnew;
+    // 记录队列尾端的位置
+    pq->rear = pnew;
+    // 队列项数加1
+    pq->items++;
     
     return true;
 }
@@ -69,7 +73,7 @@ bool DeQueue(Item * pitem, Queue * pq)
     return true;
 }
 
-/* empty the queue                */
+// 清空队列
 void EmptyTheQueue(Queue * pq)
 {
     Item dummy;
@@ -77,8 +81,7 @@ void EmptyTheQueue(Queue * pq)
         DeQueue(&dummy, pq);
 }
 
-/* Local functions                 */
-
+/* 局部函数 */
 static void CopyToNode(Item item, Node * pn)
 {
     pn->item = item;
