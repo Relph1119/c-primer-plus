@@ -1,4 +1,5 @@
 * [目录](README.md)
+    * [模板代码](template.md)
     * 第2章
         * [习题2.1](ch02/ex01.md)
         * [习题2.3](ch02/ex03.md)
